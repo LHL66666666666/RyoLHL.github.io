@@ -1,2 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Meekdai.github.io/Gmeek-template</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Meekdai.github.io/Gmeek-template</link></image><lastBuildDate>Thu, 14 Mar 2024 09:17:29 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>请接着之后的安装步骤执行</title><link>https://Meekdai.github.io/Gmeek-template/post/qing-jie-zhao-zhi-hou-de-an-zhuang-bu-zou-zhi-xing.html</link><description>如果你点击了`READM.md`的链接后，看到了这个页面，请继续之后的安装步骤执行。</description><guid isPermaLink="true">https://Meekdai.github.io/Gmeek-template/post/qing-jie-zhao-zhi-hou-de-an-zhuang-bu-zou-zhi-xing.html</guid><pubDate>Thu, 14 Mar 2024 09:15:10 +0000</pubDate></item><item><title>这是Gmeek模板仓库</title><link>https://Meekdai.github.io/Gmeek-template/post/zhe-shi-Gmeek-mo-ban-cang-ku.html</link><description>通过这个模板创建库，可以大大减少部署Gmeek博客的配置步骤。</description><guid isPermaLink="true">https://Meekdai.github.io/Gmeek-template/post/zhe-shi-Gmeek-mo-ban-cang-ku.html</guid><pubDate>Wed, 20 Dec 2023 07:42:24 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://LHL66666666666.github.io/RyoLHL.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://LHL66666666666.github.io/RyoLHL.github.io</link></image><lastBuildDate>Wed, 06 May 2026 13:25:53 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>d2l_notes</title><link>https://LHL66666666666.github.io/RyoLHL.github.io/post/d2l_notes.html</link><description>### 关于导入库的顺序问题
+报错：OSError: [WinError 1114] Error loading '...\torch\lib\c10.dll' or one of its dependencies.
+```python
+# 这段代码能跑
+import os
+os.add_dll_directory(...)
+import torch    # ← torch 是 add_dll_directory 之后第一个重型导入
+print('成功')
+
+# ... 后面再导入 pandas 等其他库就没事
+
+# ==========================================
+
+# 这段代码会报错 
+import os
+os.add_dll_directory(...)
+import pandas as pd # ← pandas 成了第一个重型导入
+import torch        # ← torch 在 pandas 之后导入，结果加载 DLL 失败
+```
+原因：
+PyTorch 的 CUDA DLL 文件（c10.dll 及其依赖）所在的目录，不在 Windows 默认的 DLL 搜索路径中。</description><guid isPermaLink="true">https://LHL66666666666.github.io/RyoLHL.github.io/post/d2l_notes.html</guid><pubDate>Wed, 06 May 2026 13:25:23 +0000</pubDate></item></channel></rss>
